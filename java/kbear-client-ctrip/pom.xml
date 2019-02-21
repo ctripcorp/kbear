@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+    http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.ctrip.framework.kbear</groupId>
+		<artifactId>kbear-parent</artifactId>
+		<version>1.0.3</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>kbear-client-ctrip</artifactId>
+	<packaging>jar</packaging>
+
+	<name>kbear-client-ctrip</name>
+
+    <properties>
+		<framework-foundation.version>1.8.3</framework-foundation.version>
+		<cat.version>2.22.4</cat.version>
+		<clogging-agent.version>4.4.5</clogging-agent.version>
+    </properties>
+ 
+    <dependencyManagement>
+        <dependencies>
+			<dependency>
+				<groupId>com.ctrip.framework</groupId>
+				<artifactId>framework-foundation</artifactId>
+				<version>${framework-foundation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.dianping.cat</groupId>
+				<artifactId>cat-client</artifactId>
+				<version>${cat.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ctrip.framework.clogging</groupId>
+				<artifactId>clogging-agent</artifactId>
+				<version>${clogging-agent.version}</version>
+			</dependency>
+        </dependencies>
+    </dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ctrip.framework.kbear</groupId>
+			<artifactId>kbear-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.ctrip.framework</groupId>
+			<artifactId>framework-foundation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.dianping.cat</groupId>
+			<artifactId>cat-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.ctrip.framework.clogging</groupId>
+			<artifactId>clogging-agent</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ctrip.framework.kbear</groupId>
+			<artifactId>kbear-client</artifactId>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>

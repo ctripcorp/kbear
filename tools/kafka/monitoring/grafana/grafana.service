@@ -1,0 +1,14 @@
+[Unit]
+Description=Grafana Visualization System
+After=network.target
+
+[Service]
+User=deploy
+Group=deploy
+WorkingDirectory=/opt/ctrip/app2/grafana
+ExecStart=/opt/ctrip/app2/grafana/bin/grafana-server web
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

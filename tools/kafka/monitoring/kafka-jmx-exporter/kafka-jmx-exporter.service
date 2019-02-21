@@ -1,0 +1,14 @@
+[Unit]
+Description=kafka jmx exporter
+After=network.target
+
+[Service]
+User=deploy
+Group=deploy
+WorkingDirectory=/opt/ctrip/app2/kafka-jmx-exporter
+ExecStart=/opt/ctrip/app2/kafka-jmx-exporter/start.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
