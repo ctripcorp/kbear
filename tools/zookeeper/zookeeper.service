@@ -1,0 +1,14 @@
+[Unit]
+Description=Zookeeper Service
+After=network.target
+
+[Service]
+User=deploy
+Group=deploy
+WorkingDirectory=/opt/ctrip/app/zookeeper/zookeeper
+ExecStart=/bin/bash bin/zkServer.sh start-foreground
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

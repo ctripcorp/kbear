@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.ctrip.framework.kbear.meta;
+
+import "MetaDtos.proto";
+
+option csharp_namespace = "Com.Ctrip.Framework.KBear.Meta";
+option java_generic_services = false;
+
+service MetaService {
+
+	rpc fetchClusters(FetchClustersRequest) returns (FetchClustersResponse);
+
+	rpc fetchTopics(FetchTopicsRequest) returns (FetchTopicsResponse);
+
+	rpc fetchConsumerGroups(FetchConsumerGroupsRequest) returns (FetchConsumerGroupsResponse);
+
+}

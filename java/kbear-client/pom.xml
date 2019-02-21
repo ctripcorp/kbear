@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+    http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.ctrip.framework.kbear</groupId>
+		<artifactId>kbear-parent</artifactId>
+		<version>1.0.3</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>kbear-client</artifactId>
+	<packaging>jar</packaging>
+
+	<name>kbear-client</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mydotey.lang</groupId>
+			<artifactId>lang-extension</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mydotey.scf</groupId>
+			<artifactId>scf-simple</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mydotey.rpc</groupId>
+			<artifactId>http-rpc-util</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.mydotey.rpc</groupId>
+			<artifactId>rpc-bp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mydotey.codec</groupId>
+			<artifactId>jackson-codec-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>

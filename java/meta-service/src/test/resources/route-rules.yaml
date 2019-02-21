@@ -1,0 +1,60 @@
+route-rules:
+   - id: r100001
+     meta:
+       rule.isGlobal: true
+     rule: use cluster fws
+   - id: r100002
+     meta:
+        topic.id: fx.kafka.demo.hello.run
+     rule: use cluster uat
+   - id: r100003
+     priority: 1
+     meta:
+        topic.id: fx.kafka.demo.hello.run
+     rule: use cluster prod when client.id=100000001
+   - id: r100004
+     meta:
+        consumerGroup.groupName: fx.kafka.demo.hello.run.consumer
+        consumerGroup.topicId: fx.kafka.demo.hello.run
+     rule: use cluster prod
+   - id: r100005
+     priority: 0
+     meta:
+        consumerGroup.groupName: fx.hellobom.string.consumer
+        consumerGroup.topicId: fx.kafka.demo.hello.run
+     rule: use cluster fws, topic fx.hellobom.string
+   - id: r100006
+     priority: 1
+     meta:
+       rule.isGlobal: true
+     rule: use cluster uat when client.env=UAT
+   - id: r100101
+     # no required meta key, should be ignored, negative case
+     priority: 1
+     rule: use cluster fws
+   - id: r100102
+     # no required meta key, should be ignored, negative case
+     priority: 1
+     meta:
+        topic.idXX: fx.kafka.demo.hello.run
+     rule: use cluster uat
+   - id: r100103
+     # no required meta key, should be ignored, negative case
+     priority: 1
+     meta:
+        consumerGroup.groupName: fx.kafka.demo.hello.run.consumer
+        consumerGroup.topicIdXX: fx.kafka.demo.hello.run
+     rule: use cluster prod
+   - id: r100104
+     # no required meta key, should be ignored, negative case
+     priority: 1
+     meta:
+        consumerGroup.groupNameXX: fx.hellobom.string.consumer
+        consumerGroup.topicId: fx.kafka.demo.hello.run
+     rule: use cluster fws, topic fx.hellobom.string
+   - id: r100105
+     # no required meta key, should be ignored, negative case
+     priority: 2
+     meta:
+       rule.isGlobalXX: true
+     rule: use cluster uat when client.env=UAT

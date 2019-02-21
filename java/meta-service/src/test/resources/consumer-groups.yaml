@@ -1,0 +1,13 @@
+consumer-groups:
+   - groupName: fx.kafka.demo.hello.run.consumer
+     topicId: fx.kafka.demo.hello.run
+     meta:
+        bu: framework
+   - groupName: fx.hellobom.string.consumer
+     topicId: fx.hellobom.string
+     meta:
+        bu: basebiz
+   - groupName: fx.hellobom.string.consumer
+     topicId: fx.kafka.demo.hello.run
+     meta:
+        bu: basebiz

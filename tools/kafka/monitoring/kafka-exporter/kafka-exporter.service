@@ -1,0 +1,14 @@
+[Unit]
+Description=Kafka Exporter Service
+After=network.target
+
+[Service]
+User=deploy
+Group=deploy
+WorkingDirectory=/opt/ctrip/app2/kafka-exporter
+ExecStart=/opt/ctrip/app2/kafka-exporter/start.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

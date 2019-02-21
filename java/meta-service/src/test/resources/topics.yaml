@@ -1,0 +1,7 @@
+topics:
+   - id: fx.kafka.demo.hello.run
+     meta:
+        bu: framework
+   - id: fx.hellobom.string
+     meta:
+        bu: basebiz

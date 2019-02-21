@@ -1,0 +1,16 @@
+[Unit]
+Description=Kafka Service
+After=network.target
+
+[Service]
+User=deploy
+Group=deploy
+WorkingDirectory=/opt/ctrip/app/kafka
+ExecStart=/opt/ctrip/app/kafka/kafka.sh start
+ExecStop=/opt/ctrip/app/kafka/kafka.sh stop 300
+Restart=always
+RestartSec=10
+TimeoutSec=360
+
+[Install]
+WantedBy=multi-user.target
