@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.ctrip.framework.kbear.route;
+
+import "RouteDtos.proto";
+
+option csharp_namespace = "Com.Ctrip.Framework.KBear.Route";
+option java_generic_services = false;
+
+service RouteService {
+
+	rpc fetchRouteRules(FetchRouteRulesRequest) returns (FetchRouteRulesResponse);
+
+	rpc fetchProducerRoute(FetchProducerRouteRequest) returns (FetchProducerRouteResponse);
+
+	rpc fetchConsumerRoute(FetchConsumerRouteRequest) returns (FetchConsumerRouteResponse);
+
+}

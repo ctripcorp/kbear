@@ -1,0 +1,14 @@
+[Unit]
+Description=Prometheus Metric System
+After=network.target
+
+[Service]
+User=deploy
+Group=deploy
+WorkingDirectory=/opt/ctrip/app2/prometheus
+ExecStart=/opt/ctrip/app2/prometheus/prometheus --config.file=prometheus.yml --storage.tsdb.path=/data/prometheus
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

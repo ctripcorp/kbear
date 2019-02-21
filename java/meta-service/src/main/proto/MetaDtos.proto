@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package com.ctrip.framework.kbear.meta;
+
+import "ServiceDtos.proto";
+
+option csharp_namespace = "Com.Ctrip.Framework.KBear.Meta";
+option java_multiple_files = true;
+
+message Cluster {
+	string id = 1;
+	map<string, string> meta = 2;
+}
+
+message Topic {
+	string id = 1;
+	map<string, string> meta = 2;
+}
+
+message ConsumerGroupId {
+	string groupName = 1;
+	string topicId = 2;
+}
+
+message ConsumerGroup {
+	ConsumerGroupId id = 1;
+	map<string, string> meta = 2;
+}
+
+message FetchClustersRequest {
+	repeated string clusterIds = 1;
+}
+
+message FetchClustersResponse {
+	com.ctrip.framework.kbear.service.ResponseStatus status = 1;
+	repeated Cluster clusters = 2;
+}
+
+message FetchTopicsRequest {
+	repeated string topicIds = 1;
+}
+
+message FetchTopicsResponse {
+	com.ctrip.framework.kbear.service.ResponseStatus status = 1;
+	repeated Topic topics = 2;
+}
+
+message FetchConsumerGroupsRequest {
+	repeated ConsumerGroupId consumerGroupIds = 1;
+}
+
+message FetchConsumerGroupsResponse {
+	com.ctrip.framework.kbear.service.ResponseStatus status = 1;
+	repeated ConsumerGroup consumerGroups = 2;
+}
+

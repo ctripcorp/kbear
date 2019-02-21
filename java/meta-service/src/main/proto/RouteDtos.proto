@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package com.ctrip.framework.kbear.route;
+
+import "ServiceDtos.proto";
+import "MetaDtos.proto";
+
+option csharp_namespace = "Com.Ctrip.Framework.KBear.Route";
+option java_multiple_files = true;
+
+message Client {
+	string id = 1;
+	map<string, string> meta = 2;
+}
+
+message Route {
+	string clusterId = 1;
+	string topicId = 2;
+}
+
+message RouteRuleInfo {
+	string id = 1;
+	int32 priority = 2;
+	map<string, string> meta = 3;
+}
+
+message FetchRouteRulesRequest {
+	repeated string routeRuleIds = 1;
+}
+
+message FetchRouteRulesResponse {
+	com.ctrip.framework.kbear.service.ResponseStatus status = 1;
+	repeated RouteRuleInfo routeRules = 2;
+}
+
+message FetchProducerRouteRequest {
+	Client client = 1;
+	repeated string topicIds = 2;
+}
+
+message FetchProducerRouteResponse {
+	com.ctrip.framework.kbear.service.ResponseStatus status = 1;
+	map<string, Route> topicIdRoutes = 2;
+	map<string, com.ctrip.framework.kbear.meta.Cluster> clusters = 3;
+	map<string, com.ctrip.framework.kbear.meta.Topic> topics = 4;
+}
+
+message FetchConsumerRouteRequest {
+	Client client = 1;
+	repeated com.ctrip.framework.kbear.meta.ConsumerGroupId consumerGroupIds = 2;
+}
+
+message ConsumerGroupIdRoutePair {
+	com.ctrip.framework.kbear.meta.ConsumerGroupId consumerGroupId = 1;
+	Route route = 2;
+}
+
+message FetchConsumerRouteResponse {
+	com.ctrip.framework.kbear.service.ResponseStatus status = 1;
+	repeated ConsumerGroupIdRoutePair consumerGroupIdRoutes = 2;
+	map<string, com.ctrip.framework.kbear.meta.Cluster> clusters = 3;
+	map<string, com.ctrip.framework.kbear.meta.Topic> topics = 4;
+	repeated com.ctrip.framework.kbear.meta.ConsumerGroup consumerGroups = 5;
+}

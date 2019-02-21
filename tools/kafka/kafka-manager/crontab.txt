@@ -1,0 +1,1 @@
+*/30 * * * * /opt/ctrip/app/kafka-manager/restart.sh

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.ctrip.framework.kbear.service;
+
+option csharp_namespace = "Com.Ctrip.Framework.KBear.Service";
+option java_multiple_files = true;
+
+message ResponseError {
+	string code = 1;
+	string message = 2;
+}
+
+message ResponseStatus {
+	string ack = 1;
+	ResponseError error = 2;
+}
