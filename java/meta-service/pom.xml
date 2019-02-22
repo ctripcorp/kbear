@@ -13,7 +13,7 @@
 	</parent>
 
 	<artifactId>meta-service</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>meta-service</name>
 
