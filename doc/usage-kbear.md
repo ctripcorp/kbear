@@ -31,9 +31,9 @@
 
 ### Deploy Kafka Exporter
 
-[部署脚本参考](../tools/kafka/monitoring/monitoring/kafka-exporter/deploy-kafka-exporter.sh)
+[部署脚本参考](../tools/kafka/monitoring/kafka-exporter/deploy-kafka-exporter.sh)
 
-1个Cluster，部署且只能部署在1台机器上。注意根据实际情况，修改 [start.sh](../tools/kafka/monitoring/monitoring/kafka-exporter/start.sh) 里的kafka.server参数。
+1个Cluster，部署且只能部署在1台机器上。注意根据实际情况，修改 [start.sh](../tools/kafka/monitoring/kafka-exporter/start.sh) 里的kafka.server参数。
 
 ### Deploy Kafka JMX Exporter
 
