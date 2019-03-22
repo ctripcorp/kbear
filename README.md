@@ -1,4 +1,4 @@
-# KBear: a Kafka multi-cluster governance solution
+# KBear: A Kafka Enterprise Solution
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -13,6 +13,16 @@ Features
   - broker monitoring
   - topic monitoring
   - consumer group monitoring
+
+Deploy & Usage
+
+[Cluster Deploy](doc/usage-deploy.md)
+
+[KBear Solution](doc/usage-kbear.md)
+
+Production Case
+
+[携程Kafka 2.0升级实战](doc/2.0-upgrade-and-multi-cluster.md)
 
 Developers
 
