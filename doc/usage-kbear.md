@@ -49,12 +49,9 @@
 
 ### CRRL (Cluster Route Rule Language)
 
-[配置示例](../java/meta-service/src/test/resources)
+CRRL 是专门为Kafka多集群设计的路由规则语言。
 
-- clusters.yaml
-- topics.yaml
-- consumer-groups.yaml
-- route-rules.yaml
+使用说明：[kbear-crrl](kbear-crrl.md)
 
 ### KBear Meta Service
 
