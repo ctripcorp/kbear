@@ -77,7 +77,6 @@ Producer<String, String> producer = CKafkaClientFactory.getDefault().newProducer
 
 ```java
 Properties properties = new Properties();
-properties = new Properties();
 properties.put("group.id", “<your consumer group>");
 properties.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 properties.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
